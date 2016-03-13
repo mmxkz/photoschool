@@ -1,0 +1,18 @@
+%h1 Промокоды
+%table.ui.single.fixed.celled.paddedline.table
+  %thead
+    %tr
+      %th.two.wide Промокод
+      %th.two.wide Количество использований
+      %th.two.wide Лимит
+      %th.two.wide Скидка
+      %th.three.wide Дата создания
+  %tbody
+    - @resources.each do |promo|
+      %tr
+        %td= promo.code
+        %td= promo.usages
+        %td= promo.limit
+        %td= "#{promo.sale} #{promo.percent? ? '%' : 'руб.'}"
+        %td= "#{promo.created_at.strftime("%d.%m.%Y")}"
+

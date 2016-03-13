@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    = csrf_meta_tag
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+  %body
+    .ui.page.grid
+      .ui.three.wide.column
+        .ui.secondary.vertical.menu
+          %a.item{href: admin_root_path, class: active?(admin_root_path)}
+            Администраторская панель
+          %a.item{href: admin_promos_path, class: active?(admin_promos_path)}
+            Промокоды
+          %a.item{href: new_purchase_path, class: active?(new_purchase_path)}
+            Покупка
+      .twelve.wide.stretched.column
+        .ui.segment
+          = yield

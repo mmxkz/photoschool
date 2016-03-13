@@ -1,0 +1,26 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "semantic-ui";
+
+body {
+  padding-top: 1rem;
+  line-height: 1.2rem;
+  background: #f7f7f7;
+}
+
+
+.ui.page.grid {
+  width: auto;
+  margin-left: 0em;
+  margin-right: 0em;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.margins {
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
+}

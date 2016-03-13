@@ -1,0 +1,17 @@
+%h1 Покупки
+%table.ui.single.fixed.celled.paddedline.table
+  %thead
+    %tr
+      %th.two.wide Цена
+      %th.two.wide Промокод
+      %th.two.wide Размер скидки
+      %th.two.wide Описание
+      %th.three.wide IP покупателя
+  %tbody
+    - @resources.each do |purchase|
+      %tr
+        %td= purchase.price
+        %td= purchase.promo ? purchase.promo.code : '---'
+        %td= purchase.promo ? "#{purchase.promo.sale} #{purchase.promo.percent? ? '%' : 'руб.'}" : '---'
+        %td= purchase.description
+        %td= purchase.ip

@@ -1,0 +1,20 @@
+%h1 Покупка
+
+= form_for @resource, html: {class:"ui form"} do |f|
+  .field
+    %label Цена
+    %span
+      = f.text_field :price
+
+  .field
+    %label Описание
+    %span
+      = f.text_area :description
+
+  / .field
+  /   %label Промокод
+  /   %span
+  /     %input.ui
+  = f.hidden_field :ip, value: get_client_ip
+
+  = f.submit(class: 'ui submit green button', value: 'Оплатить')
