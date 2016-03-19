@@ -11,10 +11,20 @@
     %span
       = f.text_area :description
 
-  / .field
-  /   %label Промокод
-  /   %span
-  /     %input.ui
-  = f.hidden_field :ip, value: get_client_ip
+  .field.PromoField{style: "display: none"}
+    %label Промокод
+    .ui.action.input
+      .ui.icon.input
+        %input#PromoCode
+        %i.icon
+      %a.ui.button.PromoActivateButton
+        Активировать
+    .ui.pointing.red.basic.label.PromoError{style: "display: none"}
+      %span
+  .ui.green.segment.SummaryPrice
+    = "Итогая стоимость:"
+    %span
 
+  = f.hidden_field :promo_id, id: 'promo_id'
+  = f.hidden_field :ip, value: get_client_ip
   = f.submit(class: 'ui submit green button', value: 'Оплатить')

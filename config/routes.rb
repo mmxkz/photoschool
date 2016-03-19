@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :purchases
 
+  get 'promo/find' => 'promos#find_by_code'
+
   namespace :admin do
     root to: 'purchases#index'
     resources :promos
