@@ -4,5 +4,5 @@ class PurchasesController < ApplicationController
             :ip,
             :description,
             :promo_id
-    end
+  end
 end

@@ -2,6 +2,7 @@ class PromosController < ApplicationController
   def find_by_code
     promo = Promo.find_by(code: params[:promocode])
     #FIXME: Добавить проверку на доступность
+
     if promo
       respond_to do |format|
         format.json{ render json: {id: promo.id, type_sale: promo.type_sale, sale: promo.sale}.to_json }

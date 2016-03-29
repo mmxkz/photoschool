@@ -1,5 +1,5 @@
 $ ->
-  $('#purchase_price').inputmask 'integer', max: '1000000'
+  $('#purchase_price').inputmask 'integer', max: '1000000', min: '0'
 
   $("#purchase_price").change ->
     price = $(@).val()

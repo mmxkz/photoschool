@@ -1,0 +1,4 @@
+ru:
+  type_sales:
+    fixed: 'фиксированный'
+    percent: 'процент'

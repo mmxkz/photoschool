@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def new
+  def new(&block)
     @resource ||= resources_class.new
   end
 

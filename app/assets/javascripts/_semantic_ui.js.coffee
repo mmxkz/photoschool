@@ -1,4 +1,6 @@
 $ ->
+  $('.ui.dropdown').dropdown()
+  $('.ui.checkbox').checkbox()
   $('.ui.form').form
     on: 'blur'
     inline: true
