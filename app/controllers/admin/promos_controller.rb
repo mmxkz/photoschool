@@ -6,7 +6,7 @@ module Admin
     end
 
     def create
-      count = params['count'] ? params['count'].to_i : 1
+      count = !params['count'].blank? ? params['count'].to_i : 1
 
       count.times do
         params['promo'].merge! 'code' => Promos::Builder.new().build_promocode(params['mask'])

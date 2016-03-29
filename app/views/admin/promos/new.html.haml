@@ -1,3 +1,4 @@
+= render "modals/promo_generate_completed"
 %h1 Генерация промокодов
 
 = form_for @resource, url: admin_promos_path, html: {class:"ui blurring form"}, remote: true do |f|
@@ -36,14 +37,3 @@
 .ui.dimmer.transition.hidden
   .ui.text.loader
     Генерация
-
-.ui.modal
-  .header.CompletedCount
-    Сгенерировано промокодов:
-    %span
-
-  .actions
-    .ui.black.deny.button
-      Продолжить
-    %a.ui.positive.right.labeled.icon.button{href: admin_promos_path}
-      Перейти к списку

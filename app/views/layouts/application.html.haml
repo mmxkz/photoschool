@@ -12,8 +12,11 @@
             Администраторская панель
           %a.item{href: admin_promos_path, class: active?(admin_promos_path)}
             Промокоды
+          %a.item{href: new_admin_promo_path, class: active?(new_admin_promo_path)}
+            Генерация промокодов
           %a.item{href: new_purchase_path, class: active?(new_purchase_path)}
             Покупка
+
       .twelve.wide.stretched.column
         .ui.segment
           = yield
