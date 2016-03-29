@@ -15,6 +15,7 @@ module Admin
           count -= 1
         end
       end
+
       respond_to do |format|
         format.json{ render json: {completed: count}.to_json }
       end
