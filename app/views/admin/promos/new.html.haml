@@ -3,14 +3,16 @@
 
 = form_for @resource, url: admin_promos_path, html: {class:"ui blurring form"}, remote: true do |f|
   %field.inline
-    %label Тип скидки
-    %span
-      .ui.selection.dropdown
-        = f.hidden_field :type_sale
-        %i.dropdown.icon
-        .menu
-          - @types.each do |key|
-            .item{"data-value" => key }= t("type_sales.#{key}")
+    .field
+      %label Тип скидки
+      %span
+        .ui.selection.dropdown.typeSaleDropdown
+          .default.text Выберите тип скидки
+          = f.hidden_field :type_sale, class: 'fixed'
+          %i.dropdown.icon
+          .menu
+            - @types.each do |key|
+              .item{"data-value" => key }= t("type_sales.#{key}")
 
   .field
     %label Скидка
