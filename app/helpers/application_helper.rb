@@ -1,6 +1,6 @@
 module ApplicationHelper
   def active?(page)
-    'active' if request.env['PATH_INFO'].include?(page)
+    'active' if request.env['PATH_INFO'] == page
   end
 
   def get_client_ip

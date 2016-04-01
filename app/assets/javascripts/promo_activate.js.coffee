@@ -23,7 +23,8 @@ $ ->
           when 'percent'
             $('.SummaryPrice span').text(price * (100 - data.sale)/100)
           when 'fixed'
-            $('.SummaryPrice span').text(price - data.sale)
+            total_amount = if (price - data.sale) > 0 then (price - data.sale) else 0
+            $('.SummaryPrice span').text(total_amount)
         $("#promo_id").val(data.id)
         $(".PromoError").hide()
       error: (error) =>

@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   def create
     @resource ||= resources_class.new(resource_params)
     if @resource.save
-      redirect_to action: :index
+      respond_to do |format|
+        format.json{ render json: {status: 200}.to_json }
+      end
     else
       @errors = @resource.errors.messages
       new

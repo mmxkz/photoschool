@@ -1,6 +1,6 @@
+= render "modals/purchase_completed"
 %h1 Покупка
-
-= form_for @resource, html: {class:"ui form"} do |f|
+= form_for @resource, url: purchases_path, html: {class:"ui form"}, remote: true  do |f|
   .field
     %label Цена
     %span
