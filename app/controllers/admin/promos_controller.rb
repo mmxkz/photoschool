@@ -6,18 +6,15 @@ module Admin
     end
 
     def create
-      count = !params['count'].blank? ? params['count'].to_i : 1
-
-      count.times do
-        params['promo'].merge! 'code' => Promos::Builder.new().build_promocode(params['mask'])
+      promocodes = Promos::Builder.new().build_promocodes(params['mask'], params['count'].to_i)
+      promocodes.each do |promocode|
+        params['promo'].merge! 'code' => promocode
         promo = Promo.new(resource_params)
-        unless promo.save
-          count -= 1
-        end
+        promo.save
       end
 
       respond_to do |format|
-        format.json{ render json: {completed: count}.to_json }
+        format.json{ render json: {completed: promocodes.length}.to_json }
       end
     end
 

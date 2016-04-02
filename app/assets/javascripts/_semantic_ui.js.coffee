@@ -19,9 +19,24 @@ $ ->
           type: 'empty'
           prompt: 'Укажите цену'
         } ]
+
       'purchase[description]':
         identifier: 'purchase[description]'
         rules: [ {
           type: 'empty'
           prompt: 'Заполните описание'
+        } ]
+
+      'mask':
+        identifier: 'mask'
+        rules: [ {
+          type: 'empty'
+          prompt: 'Заполните маску промокода'
+        } ]
+
+      'promo[sale]':
+        identifier: 'promo_sale'
+        rules: [ {
+          type: 'empty'
+          prompt: 'Введите размер скидки'
         } ]
